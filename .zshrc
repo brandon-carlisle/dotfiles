@@ -24,10 +24,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# bun completions
-[ -s "/Users/mac1/.bun/_bun" ] && source "/Users/mac1/.bun/_bun"
+# Bun completions
+BUN_COMPLETION_SCRIPT="$HOME/.bun/_bun"
+if [ -s "$BUN_COMPLETION_SCRIPT" ]; then
+  source "$BUN_COMPLETION_SCRIPT"
+fi
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
 alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
