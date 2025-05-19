@@ -1,6 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Initialize Homebrew (Linuxbrew)
+if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then # Optional: check if brew exists
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Go path
 export PATH=$PATH:$(go env GOPATH)/bin
 
